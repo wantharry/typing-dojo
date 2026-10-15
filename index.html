@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typing Dojo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>&#9000; Typing Dojo</h1>
+  <p class="tagline">Learn touch typing on your real keyboard &mdash; home row first, then every row,
+    Shift, numbers, symbols, real sentences and real code. The on-screen keyboard shows which
+    <strong>finger</strong> to use for every key.</p>
+</header>
+
+<main>
+  <section id="screen-home">
+    <p class="note">Pick any level. Five lines per session; your WPM, accuracy and most-missed keys
+      are saved in this browser. Sister game: <a href="https://wantharry.github.io/emacs-key-game/">Emacs Key Dojo</a>.</p>
+    <div id="level-list" class="tier-list"></div>
+    <p id="home-stats" class="note"></p>
+    <p class="note">Tips: keep both index fingers on <kbd>F</kbd> and <kbd>J</kbd> (the bumps), wrists up,
+      eyes on the screen. <kbd>Backspace</kbd> fixes a mistake, <kbd>Esc</kbd> quits a session.
+      <button id="btn-reset" class="link-btn">Reset stats</button></p>
+  </section>
+
+  <section id="screen-game" class="hidden">
+    <div class="hud">
+      <span id="game-level"></span>
+      <span>WPM: <b id="hud-wpm">0</b></span>
+      <span>Accuracy: <b id="hud-acc">100%</b></span>
+      <span>Errors: <b id="hud-err">0</b></span>
+      <span id="line-counter" class="dim"></span>
+      <button id="btn-quit" class="link-btn">Quit to menu</button>
+    </div>
+    <p id="level-blurb" class="blurb"></p>
+    <div id="drill-card" class="prompt-card">
+      <div id="drill" class="drill"></div>
+      <div id="finger" class="finger"></div>
+    </div>
+    <div class="legend">
+      <span class="f-lp">pinky</span><span class="f-lr">ring</span><span class="f-lm">middle</span><span class="f-li">index</span>
+      <span class="f-th">thumb</span>
+      <span class="f-ri">index</span><span class="f-rm">middle</span><span class="f-rr">ring</span><span class="f-rp">pinky</span>
+    </div>
+    <div id="keyboard" class="keyboard"></div>
+  </section>
+
+  <section id="screen-over" class="hidden">
+    <h2>Session complete</h2>
+    <p>Speed: <b id="over-wpm"></b> WPM</p>
+    <p>Accuracy: <b id="over-acc"></b></p>
+    <p>Time: <b id="over-time"></b></p>
+    <p id="over-best" class="unlock-note"></p>
+    <p id="over-weak" class="note"></p>
+    <button id="btn-retry" class="primary-btn">Same level again</button>
+    <button id="btn-next" class="primary-btn">Next level</button>
+    <button id="btn-home" class="primary-btn secondary">Back to levels</button>
+  </section>
+</main>
+
+<footer>Typing Dojo &middot; no server, no tracking, everything stays in your browser.</footer>
+
+<script src="lessons.js"></script>
+<script src="keyboard.js"></script>
+<script src="typing.js"></script>
+</body>
+</html>
